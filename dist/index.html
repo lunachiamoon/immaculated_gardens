@@ -1,0 +1,893 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Immaculate Gardens — Saul Emanuel Urias Rodriguez. Japanese garden artistry, garden design, signature commissions, and stewardship in Portland, Oregon.">
+  <meta name="theme-color" content="#071a1f">
+  <title>Immaculate Gardens — Japanese Garden Artistry</title>
+  <style>
+:root {
+  --ink: #071a1f;
+  --ink-soft: #163239;
+  --cream: #f6f0e4;
+  --paper: #fffdf8;
+  --orange: #e0693b;
+  --orange-dark: #b84d28;
+  --gold: #e5b968;
+  --sage: #92a88f;
+  --line: rgba(7, 26, 31, 0.15);
+  --muted: #5f6d6f;
+  --radius-lg: 2rem;
+  --radius-md: 1.15rem;
+  --shadow: 0 24px 80px rgba(7, 26, 31, 0.13);
+  --serif: Georgia, "Times New Roman", serif;
+  --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+button, input, select, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; }
+.skip-link { position: fixed; left: 1rem; top: -5rem; z-index: 100; background: var(--paper); padding: .75rem 1rem; border-radius: .5rem; }
+.skip-link:focus { top: 1rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 78px;
+  padding: 0 clamp(1.25rem, 4vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  transition: background .3s, box-shadow .3s, color .3s;
+}
+.site-header.scrolled { background: rgba(246, 240, 228, .94); backdrop-filter: blur(16px); color: var(--ink); box-shadow: 0 1px 0 var(--line); }
+.wordmark { display: inline-flex; align-items: center; gap: .75rem; font-size: .88rem; font-weight: 600; letter-spacing: .01em; text-decoration: none; }
+.wordmark-mark { width: 35px; height: 35px; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-family: var(--serif); font-size: .9rem; }
+.site-nav { display: flex; align-items: center; gap: 1.8rem; font-size: .82rem; font-weight: 600; }
+.site-nav > a { text-decoration: none; position: relative; }
+.site-nav > a:not(.nav-cta)::after { content: ""; position: absolute; left: 0; bottom: -.25rem; width: 100%; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform .25s; }
+.site-nav > a:hover::after { transform: scaleX(1); transform-origin: left; }
+.nav-cta { padding: .62rem 1rem; border: 1px solid currentColor; border-radius: 999px; }
+.language-switcher { display: flex; align-items: center; border: 1px solid currentColor; border-radius: 999px; padding: .18rem; }
+.lang-button { border: 0; color: inherit; background: transparent; border-radius: 999px; padding: .26rem .5rem; font-size: .69rem; cursor: pointer; }
+.lang-button.active { background: currentColor; color: var(--ink); }
+.site-header.scrolled .lang-button.active { color: var(--cream); }
+.menu-toggle { display: none; width: 42px; height: 42px; border: 0; background: transparent; color: inherit; padding: 10px; }
+.menu-toggle > span:not(.sr-only) { display: block; width: 100%; height: 1px; background: currentColor; margin: 6px 0; transition: transform .2s; }
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  background:
+    radial-gradient(circle at 64% 27%, rgba(218, 130, 74, .22), transparent 24%),
+    linear-gradient(135deg, #071a1f 0%, #0b2c31 52%, #143d3e 100%);
+  padding: 10rem clamp(1.25rem, 7vw, 7rem) 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, .9fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  align-items: center;
+  overflow: hidden;
+}
+.hero::before { content: ""; position: absolute; inset: 0; opacity: .22; background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px); background-size: 72px 72px; mask-image: linear-gradient(to bottom, black, transparent 88%); }
+.hero-copy, .hero-art, .story-strip { position: relative; z-index: 1; }
+.eyebrow { margin: 0 0 1.2rem; color: var(--orange); font-size: .72rem; font-weight: 700; letter-spacing: .19em; text-transform: uppercase; }
+.hero .eyebrow { color: var(--gold); }
+h1, h2 { font-family: var(--serif); font-weight: 400; line-height: .98; letter-spacing: -.035em; }
+h1 { max-width: 800px; margin: 0 0 1.7rem; font-size: clamp(3.7rem, 7.4vw, 7.2rem); }
+h1 em { color: var(--gold); font-style: italic; }
+.hero-intro { max-width: 650px; margin: 0; color: rgba(255,255,255,.76); font-size: clamp(1rem, 1.4vw, 1.2rem); }
+.hero-actions { margin-top: 2.2rem; display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+.button { min-height: 49px; padding: .8rem 1.25rem; display: inline-flex; align-items: center; justify-content: center; border: 0; border-radius: 999px; cursor: pointer; font-weight: 700; font-size: .82rem; text-decoration: none; transition: transform .2s, background .2s, color .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-primary { background: var(--orange); color: white; }
+.button-primary:hover { background: var(--orange-dark); }
+.button-ghost { color: var(--ink); background: transparent; border: 1px solid var(--line); }
+.text-link { font-size: .85rem; font-weight: 700; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,.35); padding-bottom: .2rem; }
+.credibility-row { list-style: none; padding: 0; margin: 3.2rem 0 0; display: flex; flex-wrap: wrap; gap: 1.2rem 1.8rem; color: rgba(255,255,255,.66); font-size: .72rem; letter-spacing: .05em; text-transform: uppercase; }
+.credibility-row li { display: flex; align-items: center; gap: .55rem; }
+.credibility-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+
+.hero-art { min-height: 610px; border-radius: 50% 50% 2rem 2rem; background: linear-gradient(155deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.14); overflow: hidden; box-shadow: 0 40px 90px rgba(0,0,0,.28); }
+.hero-art::after { content: ""; position: absolute; inset: auto 0 0; height: 42%; background: linear-gradient(transparent, rgba(5,22,25,.88)); }
+.visual-caption { position: absolute; z-index: 3; left: 2rem; right: 2rem; bottom: 2rem; }
+.visual-caption span { display: block; margin-bottom: .45rem; color: var(--gold); font-size: .67rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+.visual-caption strong { display: block; max-width: 380px; font-family: var(--serif); font-size: 1.7rem; font-weight: 400; line-height: 1.1; }
+.story-strip { grid-column: 1 / -1; margin-top: 1rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.14); display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; color: rgba(255,255,255,.64); }
+.story-strip > p { margin: 0; max-width: 620px; font-family: var(--serif); font-size: 1.35rem; line-height: 1.35; color: white; }
+.story-strip > div { display: flex; flex-direction: column; justify-content: end; }
+.story-strip span { font-size: .66rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.story-strip strong { margin-top: .35rem; font-size: .79rem; font-weight: 500; }
+
+.section-shell { padding: clamp(5.5rem, 10vw, 10rem) clamp(1.25rem, 7vw, 7rem); }
+.section-heading { max-width: 800px; }
+.section-heading h2, .booking-intro h2 { margin: 0 0 1.5rem; font-size: clamp(3rem, 5.5vw, 5.8rem); }
+.section-heading > p:last-child, .booking-intro > p { max-width: 640px; color: var(--muted); }
+.experience-grid { margin-top: 4.2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.experience-card { position: relative; min-height: 410px; padding: 2rem; display: flex; flex-direction: column; background: var(--paper); border: 1px solid rgba(7,26,31,.08); border-radius: var(--radius-md); overflow: hidden; transition: transform .3s, box-shadow .3s, background .3s, color .3s; }
+.experience-card::before { content: ""; position: absolute; width: 220px; height: 220px; border-radius: 50%; right: -120px; top: -130px; background: var(--gold); opacity: .2; transition: transform .4s; }
+.experience-card:hover { transform: translateY(-7px); box-shadow: var(--shadow); background: var(--ink); color: white; }
+.experience-card:hover::before { transform: scale(1.35); }
+.card-number { color: var(--muted); font-size: .68rem; font-weight: 700; letter-spacing: .15em; }
+.card-icon { margin: 3rem 0 1.5rem; width: 56px; height: 56px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--orange); font-family: var(--serif); font-size: 1.45rem; }
+.experience-card h3 { margin: 0 0 1rem; font-family: var(--serif); font-size: 2rem; font-weight: 400; line-height: 1.1; }
+.experience-card p { margin: 0 0 2rem; color: var(--muted); font-size: .92rem; }
+.experience-card:hover p, .experience-card:hover .card-number { color: rgba(255,255,255,.65); }
+.card-action { margin-top: auto; padding: .6rem 0; align-self: flex-start; border: 0; border-bottom: 1px solid currentColor; color: inherit; background: transparent; font-size: .76rem; font-weight: 700; cursor: pointer; }
+
+.booking { background: var(--paper); display: grid; grid-template-columns: minmax(0, .78fr) minmax(480px, 1.22fr); gap: clamp(3rem, 8vw, 8rem); }
+.booking-intro { align-self: start; position: sticky; top: 120px; }
+.booking-path { list-style: none; padding: 0; margin: 3rem 0; }
+.booking-path li { position: relative; display: grid; grid-template-columns: 40px 1fr; align-items: center; gap: .8rem; min-height: 64px; color: #8d9697; font-size: .82rem; font-weight: 600; }
+.booking-path li:not(:last-child)::after { content: ""; position: absolute; left: 19px; top: 50px; bottom: -14px; width: 1px; background: var(--line); }
+.booking-path li > span:first-child { width: 40px; height: 40px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; }
+.booking-path li.active { color: var(--ink); }
+.booking-path li.active > span:first-child { color: white; background: var(--orange); border-color: var(--orange); }
+.privacy-note { display: flex; gap: .9rem; max-width: 440px; padding: 1rem 1.1rem; background: #eef1e9; border-radius: .85rem; color: #54635d; font-size: .76rem; }
+.privacy-note > span { color: var(--orange); font-size: 1.2rem; }
+.privacy-note p { margin: 0; }
+.booking-panel { background: var(--cream); border-radius: var(--radius-lg); padding: clamp(1.35rem, 4vw, 3rem); box-shadow: 0 24px 80px rgba(7,26,31,.08); }
+.step-heading { margin-bottom: 2rem; }
+.step-heading > span { color: var(--orange); font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.step-heading h3, .booking-success h3 { margin: .55rem 0 .3rem; font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.1rem); font-weight: 400; line-height: 1.05; }
+.step-heading p { color: var(--muted); font-size: .86rem; }
+.form-step { display: none; }
+.form-step.active { display: block; animation: step-in .3s ease-out; }
+@keyframes step-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.service-options { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.service-option { position: relative; cursor: pointer; }
+.service-option input { position: absolute; opacity: 0; pointer-events: none; }
+.option-copy { min-height: 116px; padding: 1.2rem 2.7rem 1.2rem 1.2rem; display: flex; flex-direction: column; justify-content: center; border: 1px solid var(--line); border-radius: 1rem; background: var(--paper); transition: border .2s, box-shadow .2s; }
+.option-copy strong { font-family: var(--serif); font-size: 1.15rem; font-weight: 400; line-height: 1.2; }
+.option-copy small { margin-top: .4rem; color: var(--muted); font-size: .7rem; }
+.option-check { position: absolute; width: 18px; height: 18px; right: 1rem; top: 1rem; border: 1px solid #9eaaaa; border-radius: 50%; }
+.service-option input:checked + .option-copy { border-color: var(--orange); box-shadow: inset 0 0 0 1px var(--orange); }
+.service-option input:checked ~ .option-check { border: 5px solid var(--orange); }
+.service-option input:focus-visible + .option-copy { outline: 3px solid rgba(224,105,59,.25); outline-offset: 2px; }
+.field-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem .9rem; }
+.field { display: flex; flex-direction: column; gap: .45rem; }
+.field-wide { grid-column: 1 / -1; }
+.field > span { font-size: .7rem; font-weight: 700; }
+.field input, .field select, .field textarea { width: 100%; border: 1px solid var(--line); border-radius: .75rem; background: var(--paper); color: var(--ink); padding: .88rem 1rem; outline: none; transition: border .2s, box-shadow .2s; }
+.field textarea { resize: vertical; min-height: 112px; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(224,105,59,.13); }
+.field input.invalid, .field textarea.invalid { border-color: #b74434; }
+.field-error { min-height: 1em; margin: .2rem 0 0; color: #a5392d; font-size: .68rem; }
+.review-card { border: 1px solid var(--line); border-radius: 1rem; background: var(--paper); overflow: hidden; }
+.review-row { padding: .9rem 1.1rem; display: grid; grid-template-columns: 130px 1fr; gap: 1rem; border-bottom: 1px solid var(--line); }
+.review-row:last-child { border-bottom: 0; }
+.review-row span { color: var(--muted); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+.review-row strong { font-size: .82rem; font-weight: 500; white-space: pre-wrap; }
+.consent-row { margin-top: 1.25rem; display: flex; align-items: flex-start; gap: .7rem; color: var(--muted); font-size: .72rem; }
+.consent-row input { accent-color: var(--orange); margin-top: .25rem; }
+.form-actions { margin-top: 2rem; display: flex; justify-content: space-between; gap: .75rem; }
+.form-actions .button-primary { margin-left: auto; }
+.booking-success { text-align: center; padding: 2rem 0; }
+.success-icon { width: 64px; height: 64px; margin: 0 auto 1.5rem; display: grid; place-items: center; color: white; background: var(--orange); border-radius: 50%; font-size: 1.4rem; }
+.booking-success > p:not(.eyebrow):not(.copy-status) { max-width: 480px; margin: 1rem auto 2rem; color: var(--muted); }
+.success-actions { display: flex; justify-content: center; gap: .75rem; flex-wrap: wrap; }
+.copy-status { min-height: 1.3rem; color: var(--orange); font-size: .72rem; }
+.hidden { display: none !important; }
+
+footer { padding: 2.2rem clamp(1.25rem, 7vw, 7rem); display: grid; grid-template-columns: 1fr auto 1fr; gap: 2rem; align-items: center; color: rgba(255,255,255,.68); background: var(--ink); font-size: .72rem; }
+footer .wordmark { color: white; }
+footer > p { margin: 0; }
+.footer-note { text-align: right; }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+@media (max-width: 960px) {
+  .site-header { height: 70px; }
+  .menu-toggle { display: block; }
+  .site-nav { position: fixed; inset: 70px 0 auto; padding: 1.4rem; display: none; flex-direction: column; align-items: stretch; gap: .3rem; color: var(--ink); background: var(--cream); box-shadow: 0 20px 40px rgba(7,26,31,.18); }
+  .site-nav.open { display: flex; }
+  .site-nav > a { padding: .8rem; }
+  .language-switcher { align-self: flex-start; margin: .5rem .8rem; }
+  .lang-button.active { color: var(--cream); }
+  .hero { padding-top: 8rem; grid-template-columns: 1fr; }
+  .hero-art { width: min(100%, 620px); min-height: 540px; justify-self: center; }
+  .experience-grid { grid-template-columns: 1fr; }
+  .experience-card { min-height: 310px; }
+  .card-icon { margin-top: 2rem; }
+  .booking { grid-template-columns: 1fr; }
+  .booking-intro { position: static; }
+  footer { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  .footer-note { text-align: center; }
+}
+
+@media (max-width: 620px) {
+  h1 { font-size: clamp(3.2rem, 15vw, 4.8rem); }
+  .wordmark > span:last-child { max-width: 160px; line-height: 1.1; }
+  .hero { padding-left: 1.1rem; padding-right: 1.1rem; gap: 3rem; }
+  .hero-art { min-height: 470px; }
+  .harp-visual { transform: translateX(-50%) rotate(-3deg) scale(.82); }
+  .sun-orbit { width: 230px; height: 230px; }
+  .visual-caption strong { font-size: 1.35rem; }
+  .story-strip { grid-template-columns: 1fr; gap: 1.5rem; }
+  .story-strip > p { font-size: 1.15rem; }
+  .section-shell { padding-left: 1rem; padding-right: 1rem; }
+  .section-heading h2, .booking-intro h2 { font-size: 3rem; }
+  .experience-grid { margin-top: 2.5rem; }
+  .booking { padding-top: 5rem; }
+  .booking-panel { margin: 0 -.15rem; border-radius: 1.35rem; }
+  .service-options, .field-grid { grid-template-columns: 1fr; }
+  .field-wide { grid-column: auto; }
+  .review-row { grid-template-columns: 1fr; gap: .25rem; }
+  .form-actions { flex-wrap: wrap; }
+  .form-actions .button { flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+
+.garden-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.hero-art{background:var(--ink-soft)}.artist{background:var(--paper);display:grid;grid-template-columns:1fr 1fr;gap:4rem}.artist h2{font-size:clamp(2.5rem,4vw,4rem)}.philosophy h3{font-family:var(--serif);font-size:2.1rem;line-height:1.2;font-weight:400;margin:0 0 1.5rem}.philosophy p{color:var(--muted)}.motif-grid{display:grid;gap:.5rem;margin-top:2rem}.motif-grid h4{margin:0;font-size:1rem}.motif-grid p{margin:.5rem 0 1rem}.motif-grid>div{border-top:1px solid var(--line);padding-top:1rem}.experience-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.experience-card h3{margin-top:2.5rem}.experience-card{min-height:400px}.prepared-summary{white-space:pre-wrap;overflow-wrap:anywhere;font:inherit;font-size:.875rem;background:var(--paper);padding:1rem;border-radius:1rem;text-align:left}.site-nav,.button,.card-action,.wordmark,.credibility-row,.footer-note,.booking-path li,.privacy-note,.visual-caption span,.card-number,.lang-button{font-size:.875rem}.eyebrow,.story-strip span,.step-heading>span{font-size:.875rem}.experience-card p,.step-heading p,.field>span{font-size:1rem}.reveal{opacity:1;transform:none}.lang-button.active{background:var(--gold);color:var(--ink)}.site-header.scrolled .lang-button.active{color:var(--ink)}a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:4px}.hero-art{min-height:610px}@media(max-width:1100px){.experience-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.artist{gap:2rem}}@media(max-width:700px){.artist{grid-template-columns:1fr}.experience-grid{grid-template-columns:1fr}.hero-art{min-height:480px}.site-nav{font-size:1rem}.experience-card{min-height:320px}.hero h1{font-size:clamp(3rem,12vw,5rem)}}
+
+</style>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23071a1f'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23e5b968' stroke-width='2'/%3E%3Ctext x='16' y='20' text-anchor='middle' font-size='11' fill='white'%3EIG%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <a class="wordmark" href="#top" aria-label="Immaculate Gardens, home">
+      <span class="wordmark-mark" aria-hidden="true">IG</span>
+      <span>Immaculate Gardens</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only" data-i18n="menu">Open menu</span>
+      <span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="#artist" data-i18n="navStory">The artist</a>
+      <a href="#experiencias" data-i18n="navExperiences">Garden services</a>
+      <a class="nav-cta" href="#contratacion" data-i18n="navBook">Start a conversation</a>
+      <div class="language-switcher" role="group" aria-label="Idioma / Language">
+        <button type="button" class="lang-button" data-lang="es" aria-pressed="false">ES</button>
+        <button type="button" class="lang-button active" data-lang="en" aria-pressed="true">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="trayectoria">
+      <div class="hero-copy reveal">
+        <p class="eyebrow" data-i18n="heroEyebrow">Japanese garden artistry · Portland, Oregon</p>
+        <h1><span data-i18n="heroTitleA">A garden to return to.</span> <em data-i18n="heroTitleB">A place to be still.</em></h1>
+        <p class="hero-intro" data-i18n="heroIntro">Saul Emanuel Urias Rodriguez creates contemplative and restorative gardens through Immaculate Gardens. An established landscape artist, he brings craftsmanship and artistic intention to Japanese and Zen garden design across the Portland metro area.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#contratacion" data-i18n="heroCta">Discuss your garden</a>
+          <a class="text-link" href="#experiencias"><span data-i18n="heroSecondary">Explore garden services</span></a>
+        </div>
+        <ul class="credibility-row" aria-label="Garden practice">
+          <li><span data-i18n="cred1">Japanese garden design</span></li>
+          <li><span data-i18n="cred2">Commissioned garden art</span></li>
+          <li><span data-i18n="cred3">Long-term stewardship</span></li>
+        </ul>
+      </div>
+
+      <div class="hero-art reveal">
+        <img class="garden-image" src="garden-study.webp" alt="Illustrative Japanese garden study with stone, moss, and a quiet pathway" width="1024" height="1536">
+        <div class="visual-caption"><span data-i18n="visualKicker">Illustrative garden study</span><strong data-i18n="visualTitle">Stone, space, and the quiet of nature</strong></div>
+      </div>
+
+      <div class="story-strip reveal">
+        <p data-i18n="storyQuote">A garden is a living composition—shaped by stone, planting, water, and time.</p>
+        <div>
+          <span data-i18n="storyLabel">Immaculate Gardens</span>
+          <strong data-i18n="storyText">Saul Emanuel Urias Rodriguez · Japanese Garden Artist &amp; Designer</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="artist section-shell" id="artist"><div class="section-heading"><p class="eyebrow" data-i18n="artistEyebrow">The artist</p><h2 data-i18n="artistTitle">Saul Emanuel Urias Rodriguez</h2><p data-i18n="artistText">An established landscape artist serving the Portland, Oregon metro area, Saul is building Immaculate Gardens around the art of the Japanese garden: contemplative environments, considered craftsmanship, and a lasting relationship with the landscape.</p></div><div class="philosophy"><h3 data-i18n="philosophyTitle">An artistic approach to the garden.</h3><p data-i18n="philosophyText">Japanese garden traditions offer a language of balance, space, and seasonal change. Immaculate Gardens brings that language into dialogue with each setting, creating places for contemplation and restoration.</p><div class="motif-grid"><div><h4 data-i18n="motif1">Stone &amp; pathways</h4><p data-i18n="motif1Text">Placement, proportion, and movement shape how a garden is experienced.</p></div><div><h4 data-i18n="motif2">Planting &amp; pruning</h4><p data-i18n="motif2Text">Living form gains depth through considered planting and patient refinement.</p></div><div><h4 data-i18n="motif3">Space &amp; time</h4><p data-i18n="motif3Text">Open space, water, and seasonal evolution give the composition room to breathe.</p></div></div></div></section>
+    <section class="experiences section-shell" id="experiencias">
+      <div class="section-heading reveal">
+        <p class="eyebrow" data-i18n="expEyebrow">Garden services</p>
+        <h2 data-i18n="expTitle">From the first idea to a living work of art.</h2>
+        <p data-i18n="expIntro">A thoughtful path from consultation and design to a signature garden commission and ongoing artistic care.</p>
+      </div>
+
+      <div class="experience-grid">
+        <article class="experience-card reveal" data-service="performance"><span class="card-number">01</span><h3 data-i18n="service1Title">Japanese Garden Consultation</h3><p data-i18n="service1Text">Begin with a conversation about your site, your intentions, and the atmosphere you want your garden to create.</p><button class="card-action" type="button" data-i18n="serviceCta">Discuss this service</button></article>
+        <article class="experience-card reveal" data-service="workshop"><span class="card-number">02</span><h3 data-i18n="service2Title">Garden Design</h3><p data-i18n="service2Text">Explore the relationship between architecture and garden through stone placement, pathways, planting, balance, and open space.</p><button class="card-action" type="button" data-i18n="serviceCta">Discuss this service</button></article>
+        <article class="experience-card reveal" data-service="cultural"><span class="card-number">03</span><h3 data-i18n="service3Title">Signature Garden Commission</h3><p data-i18n="service3Text">Commission a contemplative garden conceived as an artistic whole, with craftsmanship and attention to the character of your space.</p><button class="card-action" type="button" data-i18n="serviceCta">Discuss this service</button></article>
+        <article class="experience-card reveal" data-service="other"><span class="card-number">04</span><h3 data-i18n="service4Title">Garden Stewardship</h3><p data-i18n="service4Text">Preserve the garden’s intention through artistic pruning, seasonal refinement, long-term shaping, and ongoing artistic direction.</p><button class="card-action" type="button" data-i18n="serviceCta">Discuss this service</button></article>
+      </div>
+    </section>
+
+    <section class="booking section-shell" id="contratacion">
+      <div class="booking-intro reveal">
+        <p class="eyebrow" data-i18n="bookEyebrow">Begin your garden</p>
+        <h2 data-i18n="bookTitle">Tell us about your space.</h2>
+        <p data-i18n="bookIntro">Choose a service and prepare a project brief for your conversation with Immaculate Gardens.</p>
+        <ol class="booking-path">
+          <li class="active"><span>1</span><span data-i18n="path1">Choose a service</span></li>
+          <li><span>2</span><span data-i18n="path2">Describe your garden</span></li>
+          <li><span>3</span><span data-i18n="path3">Review your brief</span></li>
+        </ol>
+        <div class="privacy-note">
+          <span aria-hidden="true">⌁</span>
+          <p><strong data-i18n="privateTitle">Inquiry draft.</strong> <span data-i18n="privateText">This form prepares a summary you can save or copy. It does not send an inquiry.</span></p>
+        </div>
+      </div>
+
+      <div class="booking-panel reveal">
+        <form id="booking-form" novalidate>
+          <div class="form-step active" data-step="1">
+            <div class="step-heading">
+              <span data-i18n="stepLabel">Step 1 of 3</span>
+              <h3 data-i18n="step1Title">Where would you like to begin?</h3>
+            </div>
+            <div class="service-options" role="radiogroup" aria-label="Garden service">
+              <label class="service-option">
+                <input type="radio" name="service" value="performance" required>
+                <span class="option-copy"><strong data-i18n="optionPerformance">Garden consultation</strong><small data-i18n="optionPerformanceNote">Discuss your site and intentions</small></span>
+                <span class="option-check" aria-hidden="true"></span>
+              </label>
+              <label class="service-option">
+                <input type="radio" name="service" value="workshop" required>
+                <span class="option-copy"><strong data-i18n="optionWorkshop">Garden design</strong><small data-i18n="optionWorkshopNote">Shape the garden’s artistic direction</small></span>
+                <span class="option-check" aria-hidden="true"></span>
+              </label>
+              <label class="service-option">
+                <input type="radio" name="service" value="cultural" required>
+                <span class="option-copy"><strong data-i18n="optionCultural">Signature commission</strong><small data-i18n="optionCulturalNote">Create a garden as a work of art</small></span>
+                <span class="option-check" aria-hidden="true"></span>
+              </label>
+              <label class="service-option">
+                <input type="radio" name="service" value="other" required>
+                <span class="option-copy"><strong data-i18n="optionOther">Garden stewardship</strong><small data-i18n="optionOtherNote">Care for an evolving garden</small></span>
+                <span class="option-check" aria-hidden="true"></span>
+              </label>
+            </div>
+            <p class="field-error" id="service-error" role="alert"></p>
+          </div>
+
+          <div class="form-step" data-step="2">
+            <div class="step-heading">
+              <span data-i18n="step2Label">Step 2 of 3</span>
+              <h3 data-i18n="step2Title">Your garden project</h3>
+            </div>
+            <div class="field-grid">
+              <label class="field field-wide">
+                <span data-i18n="labelName">Your name *</span>
+                <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="placeholderName" placeholder="First and last name">
+                <small class="field-error"></small>
+              </label>
+              <label class="field field-wide">
+                <span data-i18n="labelOrganization">Organization or practice</span>
+                <input type="text" name="organization" autocomplete="organization" data-i18n-placeholder="placeholderOrganization" placeholder="Optional: firm, institution, or organization">
+              </label>
+              <label class="field field-wide">
+                <span data-i18n="labelEmail">Email address *</span>
+                <input type="email" name="email" autocomplete="email" required data-i18n-placeholder="placeholderEmail" placeholder="you@email.com">
+                <small class="field-error"></small>
+              </label>
+              <label class="field">
+                <span data-i18n="labelDate">Preferred start date</span>
+                <input type="date" name="date">
+                <small class="field-error"></small>
+              </label>
+              <label class="field">
+                <span data-i18n="labelAudience">Property setting</span>
+                <select name="audience"><option value="" data-i18n="selectPrompt">Select</option><option value="Private residence" data-i18n="setting1">Private residence</option><option value="Estate" data-i18n="setting2">Estate</option><option value="Wellness or hospitality" data-i18n="setting3">Wellness or hospitality</option><option value="Cultural or institutional" data-i18n="setting4">Cultural or institutional</option><option value="Other" data-i18n="setting5">Other</option></select>
+              </label>
+              <label class="field field-wide">
+                <span data-i18n="labelLocation">City or neighborhood *</span>
+                <input type="text" name="location" autocomplete="address-level2" required data-i18n-placeholder="placeholderLocation" placeholder="Portland, Oregon">
+                <small class="field-error"></small>
+              </label>
+              <label class="field field-wide">
+                <span data-i18n="labelBudget">Budget</span>
+                <input name="budget" type="text" data-i18n-placeholder="budgetPrompt" placeholder="Discuss during consultation">
+              </label>
+              <label class="field field-wide">
+                <span data-i18n="labelDetails">Tell us about your garden *</span>
+                <textarea name="details" rows="4" required minlength="20" data-i18n-placeholder="placeholderDetails" placeholder="Describe the space, your vision, and what you hope to experience in the garden…"></textarea>
+                <small class="field-error"></small>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-step" data-step="3">
+            <div class="step-heading">
+              <span data-i18n="step3Label">Step 3 of 3</span>
+              <h3 data-i18n="step3Title">Review your project brief</h3>
+              <p data-i18n="step3Text">Check the details before preparing your summary.</p>
+            </div>
+            <div class="review-card" id="review-card"></div>
+            <label class="consent-row">
+              <input type="checkbox" name="consent" required>
+              <span data-i18n="consent">I confirm these details and understand this form prepares a draft without sending it.</span>
+            </label>
+            <p class="field-error" id="consent-error" role="alert"></p>
+          </div>
+
+          <div class="form-actions">
+            <button class="button button-ghost hidden" type="button" id="back-button" data-i18n="back">Back</button>
+            <button class="button button-primary" type="button" id="next-button" data-i18n="next">Continue</button>
+            <button class="button button-primary hidden" type="submit" id="submit-button" data-i18n="prepare">Prepare project brief</button>
+          </div>
+        </form>
+
+        <div class="booking-success hidden" id="booking-success" aria-live="polite">
+          <div class="success-icon" aria-hidden="true">✓</div>
+          <p class="eyebrow" data-i18n="successEyebrow">Project brief prepared</p>
+          <h3 data-i18n="successTitle">Your garden brief is ready.</h3>
+          <p data-i18n="successText">Copy or download your brief to keep for a conversation with Immaculate Gardens. Your inquiry has not been sent.</p>
+          <div class="success-actions">
+            <button class="button button-primary" type="button" id="copy-request" data-i18n="copy">Copy summary</button>
+            <button class="button button-ghost" type="button" id="download-request" data-i18n="download">Download brief</button>
+            <button class="button button-ghost" type="button" id="new-request" data-i18n="newRequest">New inquiry</button>
+          </div>
+          <p class="copy-status" id="copy-status" role="status"></p><pre id="prepared-summary" class="prepared-summary"></pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="wordmark" href="#top">
+      <span class="wordmark-mark" aria-hidden="true">IG</span>
+      <span>Immaculate Gardens</span>
+    </a>
+    <p data-i18n="footerLine">Japanese garden artistry · Design · Commissions · Stewardship</p>
+    <p class="footer-note"><span data-i18n="footerPrivate">Portland, Oregon metro area</span> · <span id="year"></span></p>
+  </footer>
+
+  <script>
+const translations = {
+  "es": {
+    "skip": "Saltar al contenido",
+    "menu": "Abrir menú",
+    "navStory": "El artista",
+    "navExperiences": "Servicios de jardín",
+    "navBook": "Iniciar una conversación",
+    "heroEyebrow": "Arte de jardines japoneses · Portland, Oregón",
+    "heroTitleA": "Un jardín al que volver.",
+    "heroTitleB": "Un lugar para la calma.",
+    "heroIntro": "Saul Emanuel Urias Rodriguez crea jardines contemplativos y restauradores a través de Immaculate Gardens. Como artista paisajista establecido, aporta trabajo artesanal e intención artística al diseño de jardines japoneses y Zen en el área metropolitana de Portland.",
+    "heroCta": "Conversemos sobre tu jardín",
+    "heroSecondary": "Explorar los servicios",
+    "cred1": "Diseño de jardines japoneses",
+    "cred2": "Arte de jardines por encargo",
+    "cred3": "Cuidado artístico a largo plazo",
+    "visualKicker": "Estudio ilustrativo de jardín",
+    "visualTitle": "Piedra, espacio y la quietud de la naturaleza",
+    "storyQuote": "Un jardín es una composición viva: formada por piedra, plantas, agua y tiempo.",
+    "storyLabel": "Immaculate Gardens",
+    "storyText": "Saul Emanuel Urias Rodriguez · Artista y diseñador de jardines japoneses",
+    "expEyebrow": "Servicios de jardín",
+    "expTitle": "De la primera idea a una obra de arte viva.",
+    "expIntro": "Un recorrido cuidadoso desde la consulta y el diseño hasta un jardín de autor por encargo y su cuidado artístico continuo.",
+    "service1Title": "Consulta de Jardín Japonés",
+    "service1Text": "Comienza con una conversación sobre tu espacio, tus intenciones y la atmósfera que deseas crear.",
+    "service2Title": "Diseño de Jardines",
+    "service2Text": "Explora la relación entre arquitectura y jardín mediante la colocación de piedras, senderos, plantas, equilibrio y espacio abierto.",
+    "service3Title": "Jardín de Autor por Encargo",
+    "service3Text": "Encarga un jardín contemplativo concebido como un conjunto artístico, con trabajo artesanal y atención al carácter de tu espacio.",
+    "serviceCta": "Consultar este servicio",
+    "bookEyebrow": "Comienza tu jardín",
+    "bookTitle": "Cuéntanos sobre tu espacio.",
+    "bookIntro": "Elige un servicio y prepara un resumen de tu proyecto para conversar con Immaculate Gardens.",
+    "path1": "Elige un servicio",
+    "path2": "Describe tu jardín",
+    "path3": "Revisa el resumen",
+    "privateTitle": "Borrador de consulta.",
+    "privateText": "Este formulario prepara un resumen que puedes guardar o copiar. No envía una consulta.",
+    "stepLabel": "Paso 1 de 3",
+    "step1Title": "¿Por dónde quieres comenzar?",
+    "optionPerformance": "Consulta de jardín",
+    "optionPerformanceNote": "Conversar sobre tu espacio e intenciones",
+    "optionWorkshop": "Diseño de jardín",
+    "optionWorkshopNote": "Definir la dirección artística",
+    "optionCultural": "Jardín de autor por encargo",
+    "optionCulturalNote": "Crear un jardín como obra de arte",
+    "optionOther": "Cuidado artístico del jardín",
+    "optionOtherNote": "Cuidar un jardín en evolución",
+    "step2Label": "Paso 2 de 3",
+    "step2Title": "Tu proyecto de jardín",
+    "labelName": "Tu nombre *",
+    "labelOrganization": "Organización o estudio",
+    "labelEmail": "Correo electrónico *",
+    "labelDate": "Fecha de inicio deseada",
+    "labelAudience": "Tipo de propiedad",
+    "selectPrompt": "Seleccionar",
+    "labelLocation": "Ciudad o barrio *",
+    "labelBudget": "Presupuesto",
+    "budgetPrompt": "Conversarlo durante la consulta",
+    "budget1": "Menos de USD 1.000",
+    "budget4": "Más de USD 6.000",
+    "labelDetails": "Cuéntanos sobre tu jardín *",
+    "placeholderName": "Nombre y apellido",
+    "placeholderOrganization": "Opcional: estudio, institución u organización",
+    "placeholderEmail": "tu@correo.com",
+    "placeholderLocation": "Portland, Oregón",
+    "placeholderDetails": "Describe el espacio, tu visión, los elementos existentes y lo que deseas experimentar en el jardín…",
+    "step3Label": "Paso 3 de 3",
+    "step3Title": "Revisa el resumen del proyecto",
+    "step3Text": "Revisa los detalles antes de preparar el resumen.",
+    "consent": "Confirmo estos datos y entiendo que este formulario prepara un borrador sin enviarlo.",
+    "back": "Atrás",
+    "next": "Continuar",
+    "prepare": "Preparar resumen del proyecto",
+    "successEyebrow": "Resumen del proyecto preparado",
+    "successTitle": "El resumen de tu jardín está listo.",
+    "successText": "Copia o descarga el resumen para conservarlo y conversar con Immaculate Gardens. Tu consulta no se ha enviado.",
+    "copy": "Copiar resumen",
+    "newRequest": "Nueva solicitud",
+    "footerLine": "Arte de jardines japoneses · Diseño · Encargos · Cuidado artístico",
+    "footerPrivate": "Área metropolitana de Portland, Oregón",
+    "required": "Completa este campo.",
+    "invalidEmail": "Ingresa un correo válido.",
+    "detailsShort": "Incluye al menos 20 caracteres.",
+    "chooseService": "Selecciona un servicio de jardín para continuar.",
+    "acceptConsent": "Confirma la información para continuar.",
+    "copied": "Resumen copiado.",
+    "copyFailed": "No fue posible copiar. Selecciona y copia el texto manualmente.",
+    "reviewService": "Servicio de jardín",
+    "reviewContact": "Contacto",
+    "reviewOrganization": "Organización",
+    "reviewDate": "Inicio deseado",
+    "reviewLocation": "Lugar",
+    "reviewAudience": "Tipo de propiedad",
+    "reviewBudget": "Presupuesto",
+    "reviewDetails": "Detalles",
+    "notProvided": "No especificado",
+    "summaryTitle": "RESUMEN DEL PROYECTO DE JARDÍN — IMMACULATE GARDENS",
+    "service4Title": "Cuidado Artístico del Jardín",
+    "service4Text": "Preserva la intención del jardín mediante poda artística, refinamiento estacional, formación a largo plazo y dirección artística continua.",
+    "download": "Descargar resumen",
+    "artistEyebrow": "El artista",
+    "artistTitle": "Saul Emanuel Urias Rodriguez",
+    "artistText": "Artista paisajista establecido en el área metropolitana de Portland, Oregón, Saul está construyendo Immaculate Gardens alrededor del arte del jardín japonés: entornos contemplativos, trabajo artesanal cuidado y una relación duradera con el paisaje.",
+    "philosophyTitle": "Un enfoque artístico del jardín.",
+    "philosophyText": "Las tradiciones del jardín japonés ofrecen un lenguaje de equilibrio, espacio y cambio estacional. Immaculate Gardens pone ese lenguaje en diálogo con cada entorno, creando lugares para la contemplación y la restauración.",
+    "motif1": "Piedra y senderos",
+    "motif1Text": "La colocación, la proporción y el movimiento dan forma a la experiencia del jardín.",
+    "motif2": "Plantación y poda",
+    "motif2Text": "La forma viva adquiere profundidad con plantación cuidadosa y refinamiento paciente.",
+    "motif3": "Espacio y tiempo",
+    "motif3Text": "El espacio abierto, el agua y la evolución estacional permiten respirar a la composición.",
+    "setting1": "Residencia privada",
+    "setting2": "Finca",
+    "setting3": "Bienestar u hospitalidad",
+    "setting4": "Cultural o institucional",
+    "setting5": "Otro"
+  },
+  "en": {
+    "skip": "Skip to content",
+    "menu": "Open menu",
+    "navStory": "The artist",
+    "navExperiences": "Garden services",
+    "navBook": "Start a conversation",
+    "heroEyebrow": "Japanese garden artistry · Portland, Oregon",
+    "heroTitleA": "A garden to return to.",
+    "heroTitleB": "A place to be still.",
+    "heroIntro": "Saul Emanuel Urias Rodriguez creates contemplative and restorative gardens through Immaculate Gardens. An established landscape artist, he brings craftsmanship and artistic intention to Japanese and Zen garden design across the Portland metro area.",
+    "heroCta": "Discuss your garden",
+    "heroSecondary": "Explore garden services",
+    "cred1": "Japanese garden design",
+    "cred2": "Commissioned garden art",
+    "cred3": "Long-term stewardship",
+    "visualKicker": "Illustrative garden study",
+    "visualTitle": "Stone, space, and the quiet of nature",
+    "storyQuote": "A garden is a living composition—shaped by stone, planting, water, and time.",
+    "storyLabel": "Immaculate Gardens",
+    "storyText": "Saul Emanuel Urias Rodriguez · Japanese Garden Artist & Designer",
+    "expEyebrow": "Garden services",
+    "expTitle": "From the first idea to a living work of art.",
+    "expIntro": "A thoughtful path from consultation and design to a signature garden commission and ongoing artistic care.",
+    "service1Title": "Japanese Garden Consultation",
+    "service1Text": "Begin with a conversation about your site, your intentions, and the atmosphere you want your garden to create.",
+    "service2Title": "Garden Design",
+    "service2Text": "Explore the relationship between architecture and garden through stone placement, pathways, planting, balance, and open space.",
+    "service3Title": "Signature Garden Commission",
+    "service3Text": "Commission a contemplative garden conceived as an artistic whole, with craftsmanship and attention to the character of your space.",
+    "serviceCta": "Discuss this service",
+    "bookEyebrow": "Begin your garden",
+    "bookTitle": "Tell us about your space.",
+    "bookIntro": "Choose a service and prepare a project brief for your conversation with Immaculate Gardens.",
+    "path1": "Choose a service",
+    "path2": "Describe your garden",
+    "path3": "Review your brief",
+    "privateTitle": "Inquiry draft.",
+    "privateText": "This form prepares a summary you can save or copy. It does not send an inquiry.",
+    "stepLabel": "Step 1 of 3",
+    "step1Title": "Where would you like to begin?",
+    "optionPerformance": "Garden consultation",
+    "optionPerformanceNote": "Discuss your site and intentions",
+    "optionWorkshop": "Garden design",
+    "optionWorkshopNote": "Shape the garden’s artistic direction",
+    "optionCultural": "Signature commission",
+    "optionCulturalNote": "Create a garden as a work of art",
+    "optionOther": "Garden stewardship",
+    "optionOtherNote": "Care for an evolving garden",
+    "step2Label": "Step 2 of 3",
+    "step2Title": "Your garden project",
+    "labelName": "Your name *",
+    "labelOrganization": "Organization or practice",
+    "labelEmail": "Email address *",
+    "labelDate": "Preferred start date",
+    "labelAudience": "Property setting",
+    "selectPrompt": "Select",
+    "labelLocation": "City or neighborhood *",
+    "labelBudget": "Budget",
+    "budgetPrompt": "Discuss during consultation",
+    "budget1": "Under USD 1,000",
+    "budget4": "Over USD 6,000",
+    "labelDetails": "Tell us about your garden *",
+    "placeholderName": "First and last name",
+    "placeholderOrganization": "Optional: firm, institution, or organization",
+    "placeholderEmail": "you@email.com",
+    "placeholderLocation": "Portland, Oregon",
+    "placeholderDetails": "Describe the space, your vision, existing features, and what you hope to experience in the garden…",
+    "step3Label": "Step 3 of 3",
+    "step3Title": "Review your project brief",
+    "step3Text": "Check the details before preparing your summary.",
+    "consent": "I confirm these details and understand this form prepares a draft without sending it.",
+    "back": "Back",
+    "next": "Continue",
+    "prepare": "Prepare project brief",
+    "successEyebrow": "Project brief prepared",
+    "successTitle": "Your garden brief is ready.",
+    "successText": "Copy or download your brief to keep for a conversation with Immaculate Gardens. Your inquiry has not been sent.",
+    "copy": "Copy summary",
+    "newRequest": "New inquiry",
+    "footerLine": "Japanese garden artistry · Design · Commissions · Stewardship",
+    "footerPrivate": "Portland, Oregon metro area",
+    "required": "Complete this field.",
+    "invalidEmail": "Enter a valid email address.",
+    "detailsShort": "Include at least 20 characters.",
+    "chooseService": "Choose a garden service to continue.",
+    "acceptConsent": "Confirm the information to continue.",
+    "copied": "Summary copied.",
+    "copyFailed": "Could not copy. Please select and copy the text manually.",
+    "reviewService": "Garden service",
+    "reviewContact": "Contact",
+    "reviewOrganization": "Organization",
+    "reviewDate": "Preferred start",
+    "reviewLocation": "Location",
+    "reviewAudience": "Property setting",
+    "reviewBudget": "Budget",
+    "reviewDetails": "Details",
+    "notProvided": "Not provided",
+    "summaryTitle": "GARDEN PROJECT BRIEF — IMMACULATE GARDENS",
+    "service4Title": "Garden Stewardship",
+    "service4Text": "Preserve the garden’s intention through artistic pruning, seasonal refinement, long-term shaping, and ongoing artistic direction.",
+    "download": "Download brief",
+    "artistEyebrow": "The artist",
+    "artistTitle": "Saul Emanuel Urias Rodriguez",
+    "artistText": "An established landscape artist serving the Portland, Oregon metro area, Saul is building Immaculate Gardens around the art of the Japanese garden: contemplative environments, considered craftsmanship, and a lasting relationship with the landscape.",
+    "philosophyTitle": "An artistic approach to the garden.",
+    "philosophyText": "Japanese garden traditions offer a language of balance, space, and seasonal change. Immaculate Gardens brings that language into dialogue with each setting, creating places for contemplation and restoration.",
+    "motif1": "Stone & pathways",
+    "motif1Text": "Placement, proportion, and movement shape how a garden is experienced.",
+    "motif2": "Planting & pruning",
+    "motif2Text": "Living form gains depth through considered planting and patient refinement.",
+    "motif3": "Space & time",
+    "motif3Text": "Open space, water, and seasonal evolution give the composition room to breathe.",
+    "setting1": "Private residence",
+    "setting2": "Estate",
+    "setting3": "Wellness or hospitality",
+    "setting4": "Cultural or institutional",
+    "setting5": "Other"
+  }
+};
+const serviceNames = {"en": {"performance": "Japanese Garden Consultation", "workshop": "Garden Design", "cultural": "Signature Garden Commission", "other": "Garden Stewardship"}, "es": {"performance": "Consulta de Jardín Japonés", "workshop": "Diseño de Jardines", "cultural": "Jardín de Autor por Encargo", "other": "Cuidado Artístico del Jardín"}};
+let language = "en";
+let currentStep = 1;
+let preparedSummary = "";
+const form = document.querySelector("#booking-form");
+const steps = [...document.querySelectorAll(".form-step")];
+const pathItems = [...document.querySelectorAll(".booking-path li")];
+const nextButton = document.querySelector("#next-button");
+const backButton = document.querySelector("#back-button");
+const submitButton = document.querySelector("#submit-button");
+
+function t(key) { return translations[language][key] || key; }
+
+function setLanguage(lang) {
+  language = lang;
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.dataset.i18n;
+    if (translations[lang][key]) element.textContent = translations[lang][key];
+  });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
+    element.placeholder = translations[lang][element.dataset.i18nPlaceholder];
+  });
+  document.querySelectorAll(".lang-button").forEach((button) => {
+    const active = button.dataset.lang === lang;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  });
+  document.title = lang === "es" ? "Immaculate Gardens — Arte de Jardines Japoneses" : "Immaculate Gardens — Japanese Garden Artistry";
+  if (currentStep === 3) renderReview();
+  document.querySelector("#prepared-summary").textContent = preparedSummary;
+  document.querySelector(".garden-image").alt = lang === "en" ? "Illustrative Japanese garden study with stone, moss, and a quiet pathway" : "Estudio ilustrativo de jardín japonés con piedras, musgo y un sendero tranquilo";
+}
+
+document.querySelectorAll(".lang-button").forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
+
+const dateInput = document.querySelector("input[name='date']");
+dateInput.min = new Date().toISOString().slice(0, 10);
+
+const menuToggle = document.querySelector(".menu-toggle");
+const siteNav = document.querySelector(".site-nav");
+menuToggle.addEventListener("click", () => {
+  const open = siteNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+});
+document.querySelectorAll(".site-nav a").forEach((link) => link.addEventListener("click", () => {
+  siteNav.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded", "false");
+}));
+
+const header = document.querySelector(".site-header");
+const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 35);
+window.addEventListener("scroll", updateHeader, { passive: true });
+updateHeader();
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: .12 });
+document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+function selectService(value) {
+  const input = form.querySelector(`input[name="service"][value="${value}"]`);
+  if (input) input.checked = true;
+  document.querySelector("#contratacion").scrollIntoView({ behavior: "smooth" });
+}
+document.querySelectorAll(".experience-card").forEach((card) => {
+  card.querySelector(".card-action").addEventListener("click", () => selectService(card.dataset.service));
+});
+
+function showStep(step) {
+  currentStep = step;
+  steps.forEach((item) => item.classList.toggle("active", Number(item.dataset.step) === step));
+  pathItems.forEach((item, index) => item.classList.toggle("active", index <= step - 1));
+  backButton.classList.toggle("hidden", step === 1);
+  nextButton.classList.toggle("hidden", step === 3);
+  submitButton.classList.toggle("hidden", step !== 3);
+  if (step === 3) renderReview();
+  document.querySelector(".booking-panel").scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+function validateStep(step) {
+  if (step === 1) {
+    const selected = form.querySelector("input[name='service']:checked");
+    document.querySelector("#service-error").textContent = selected ? "" : t("chooseService");
+    return Boolean(selected);
+  }
+  if (step === 2) {
+    const fields = [...form.querySelectorAll("[data-step='2'] [required]")];
+    let valid = true;
+    fields.forEach((field) => {
+      const error = field.parentElement.querySelector(".field-error");
+      field.classList.remove("invalid");
+      error.textContent = "";
+      if (!field.value.trim()) {
+        valid = false;
+        field.classList.add("invalid");
+        error.textContent = t("required");
+      } else if (field.type === "email" && !field.validity.valid) {
+        valid = false;
+        field.classList.add("invalid");
+        error.textContent = t("invalidEmail");
+      } else if (field.name === "details" && field.value.trim().length < 20) {
+        valid = false;
+        field.classList.add("invalid");
+        error.textContent = t("detailsShort");
+      }
+    });
+    return valid;
+  }
+  return true;
+}
+
+nextButton.addEventListener("click", () => {
+  if (validateStep(currentStep)) showStep(currentStep + 1);
+});
+backButton.addEventListener("click", () => showStep(currentStep - 1));
+
+function formValues() { return Object.fromEntries(new FormData(form).entries()); }
+
+function budgetLabel(value) { return value || t("budgetPrompt"); }
+
+function renderReview() {
+  const data = formValues();
+  const rows = [
+    [t("reviewService"), serviceNames[language][data.service]],
+    [t("reviewContact"), `${data.name}\n${data.email}`],
+    [t("reviewOrganization"), data.organization || t("notProvided")],
+    [t("reviewDate"), data.date || t("notProvided")],
+    [t("reviewLocation"), data.location],
+    [t("reviewAudience"), data.audience ? form.querySelector("select[name=audience] option:checked").textContent : t("notProvided")],
+    [t("reviewBudget"), budgetLabel(data.budget)],
+    [t("reviewDetails"), data.details]
+  ];
+  const review = document.querySelector("#review-card");
+  review.innerHTML = "";
+  rows.forEach(([label, value]) => {
+    const row = document.createElement("div");
+    row.className = "review-row";
+    const labelElement = document.createElement("span");
+    const valueElement = document.createElement("strong");
+    labelElement.textContent = label;
+    valueElement.textContent = value;
+    row.append(labelElement, valueElement);
+    review.append(row);
+  });
+  preparedSummary = `${t("summaryTitle")}\n\n${rows.map(([label, value]) => `${label}: ${value}`).join("\n\n")}`;
+}
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const consent = form.querySelector("input[name='consent']");
+  if (!consent.checked) {
+    document.querySelector("#consent-error").textContent = t("acceptConsent");
+    return;
+  }
+  document.querySelector("#consent-error").textContent = "";
+  renderReview();
+  form.classList.add("hidden");
+  document.querySelector("#booking-success").classList.remove("hidden");
+  document.querySelector("#prepared-summary").textContent = preparedSummary;
+});
+
+document.querySelector("#copy-request").addEventListener("click", async () => {
+  const status = document.querySelector("#copy-status");
+  try {
+    await navigator.clipboard.writeText(preparedSummary);
+    status.textContent = t("copied");
+  } catch {
+    status.textContent = t("copyFailed");
+  }
+});
+
+document.querySelector("#new-request").addEventListener("click", () => {
+  form.reset();
+  form.classList.remove("hidden");
+  document.querySelector("#booking-success").classList.add("hidden");
+  document.querySelector("#copy-status").textContent = "";
+  showStep(1);
+});
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+
+document.querySelector('#download-request').addEventListener('click',()=>{const blob=new Blob([preparedSummary],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='immaculate-gardens-project-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&siteNav.classList.contains('open')){siteNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus();}});
+setLanguage('en');
+
+</script>
+</body>
+</html>
