@@ -7,9 +7,9 @@ Client-facing bilingual website for Saul Emanuel Urias Rodriguez, Japanese Garde
 - Artist introduction and garden philosophy
 - Consultation, design, signature commissions, and stewardship
 - English and Spanish text
-- Three-step project inquiry with copy and download
+- One-page inquiry form with direct email delivery
 
-The inquiry form prepares a local brief; it does not send email or submit to a server. The garden image is an illustrative generated study, not a photograph of Saul's work.
+The inquiry form submits through FormSubmit to `immaculategardensllc@gmail.com`. The recipient must activate FormSubmit using its one-time inbox confirmation after the first submission before delivery is enabled. The form preserves input on errors, prevents duplicate submissions, and provides a direct email link as a fallback. Name, email, and message are required; service and location are optional. Submission behavior was tested with mocked responses; actual inbox delivery requires recipient activation and a live submission. The garden image is an illustrative generated study, not a photograph of Saul's work.
 
 ## Run locally
 

@@ -85,128 +85,28 @@
       <div class="booking-intro reveal">
         <p class="eyebrow" data-i18n="bookEyebrow">Begin your garden</p>
         <h2 data-i18n="bookTitle">Tell us about your space.</h2>
-        <p data-i18n="bookIntro">Choose a service and prepare a project brief for your conversation with Immaculate Gardens.</p>
-        <ol class="booking-path">
-          <li class="active"><span>1</span><span data-i18n="path1">Choose a service</span></li>
-          <li><span>2</span><span data-i18n="path2">Describe your garden</span></li>
-          <li><span>3</span><span data-i18n="path3">Review your brief</span></li>
-        </ol>
-        <div class="privacy-note">
-          <span aria-hidden="true">⌁</span>
-          <p><strong data-i18n="privateTitle">Inquiry draft.</strong> <span data-i18n="privateText">This form prepares a summary you can save or copy. It does not send an inquiry.</span></p>
-        </div>
+        <p data-i18n="bookIntro">Share a few details and send your inquiry to Immaculate Gardens.</p>
+        <div class="direct-contact"><span data-i18n="emailAlternative">Prefer email?</span><br><a href="mailto:immaculategardensllc@gmail.com">immaculategardensllc@gmail.com</a></div>
       </div>
-
       <div class="booking-panel reveal">
-        <form id="booking-form" novalidate>
-          <div class="form-step active" data-step="1">
-            <div class="step-heading">
-              <span data-i18n="stepLabel">Step 1 of 3</span>
-              <h3 data-i18n="step1Title">Where would you like to begin?</h3>
-            </div>
-            <div class="service-options" role="radiogroup" aria-label="Garden service">
-              <label class="service-option">
-                <input type="radio" name="service" value="performance" required>
-                <span class="option-copy"><strong data-i18n="optionPerformance">Garden consultation</strong><small data-i18n="optionPerformanceNote">Discuss your site and intentions</small></span>
-                <span class="option-check" aria-hidden="true"></span>
-              </label>
-              <label class="service-option">
-                <input type="radio" name="service" value="workshop" required>
-                <span class="option-copy"><strong data-i18n="optionWorkshop">Garden design</strong><small data-i18n="optionWorkshopNote">Shape the garden’s artistic direction</small></span>
-                <span class="option-check" aria-hidden="true"></span>
-              </label>
-              <label class="service-option">
-                <input type="radio" name="service" value="cultural" required>
-                <span class="option-copy"><strong data-i18n="optionCultural">Signature commission</strong><small data-i18n="optionCulturalNote">Create a garden as a work of art</small></span>
-                <span class="option-check" aria-hidden="true"></span>
-              </label>
-              <label class="service-option">
-                <input type="radio" name="service" value="other" required>
-                <span class="option-copy"><strong data-i18n="optionOther">Garden stewardship</strong><small data-i18n="optionOtherNote">Care for an evolving garden</small></span>
-                <span class="option-check" aria-hidden="true"></span>
-              </label>
-            </div>
-            <p class="field-error" id="service-error" role="alert"></p>
+        <form id="booking-form" action="https://formsubmit.co/immaculategardensllc@gmail.com" method="POST" novalidate>
+          <div class="step-heading"><h3 data-i18n="formTitle">Let’s talk about your garden.</h3><p data-i18n="requiredNote">Name, email, and a short message are all we need to start.</p></div>
+          <input type="hidden" name="_subject" value="New garden inquiry — Immaculate Gardens">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="form-honeypot" aria-hidden="true"><label>Leave this empty<input name="_honey" type="text" tabindex="-1" autocomplete="off"></label></div>
+          <div class="field-grid">
+            <label class="field"><span data-i18n="labelName">Your name *</span><input name="name" type="text" autocomplete="name" required maxlength="120" placeholder="First and last name" data-i18n-placeholder="placeholderName" aria-describedby="name-error"><small class="field-error" id="name-error"></small></label>
+            <label class="field"><span data-i18n="labelEmail">Email address *</span><input name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@email.com" data-i18n-placeholder="placeholderEmail" aria-describedby="email-error"><small class="field-error" id="email-error"></small></label>
+            <label class="field field-wide"><span data-i18n="labelService">What are you interested in?</span><select name="service"><option value="general" data-i18n="serviceGeneral">I’m not sure yet</option><option value="performance" data-i18n="service1Title">Japanese Garden Consultation</option><option value="workshop" data-i18n="service2Title">Garden Design</option><option value="cultural" data-i18n="service3Title">Signature Garden Commission</option><option value="other" data-i18n="service4Title">Garden Stewardship</option></select></label>
+            <label class="field field-wide"><span data-i18n="labelLocation">City or neighborhood (optional)</span><input name="location" type="text" autocomplete="address-level2" maxlength="200" placeholder="Portland, Oregon" data-i18n-placeholder="placeholderLocation"></label>
+            <label class="field field-wide"><span data-i18n="labelDetails">Your message *</span><textarea name="details" rows="4" required maxlength="5000" placeholder="What would you like to create or improve in your garden?" data-i18n-placeholder="placeholderDetails" aria-describedby="details-error"></textarea><small class="field-error" id="details-error"></small></label>
           </div>
-
-          <div class="form-step" data-step="2">
-            <div class="step-heading">
-              <span data-i18n="step2Label">Step 2 of 3</span>
-              <h3 data-i18n="step2Title">Your garden project</h3>
-            </div>
-            <div class="field-grid">
-              <label class="field field-wide">
-                <span data-i18n="labelName">Your name *</span>
-                <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="placeholderName" placeholder="First and last name">
-                <small class="field-error"></small>
-              </label>
-              <label class="field field-wide">
-                <span data-i18n="labelOrganization">Organization or practice</span>
-                <input type="text" name="organization" autocomplete="organization" data-i18n-placeholder="placeholderOrganization" placeholder="Optional: firm, institution, or organization">
-              </label>
-              <label class="field field-wide">
-                <span data-i18n="labelEmail">Email address *</span>
-                <input type="email" name="email" autocomplete="email" required data-i18n-placeholder="placeholderEmail" placeholder="you@email.com">
-                <small class="field-error"></small>
-              </label>
-              <label class="field">
-                <span data-i18n="labelDate">Preferred start date</span>
-                <input type="date" name="date">
-                <small class="field-error"></small>
-              </label>
-              <label class="field">
-                <span data-i18n="labelAudience">Property setting</span>
-                <select name="audience"><option value="" data-i18n="selectPrompt">Select</option><option value="Private residence" data-i18n="setting1">Private residence</option><option value="Estate" data-i18n="setting2">Estate</option><option value="Wellness or hospitality" data-i18n="setting3">Wellness or hospitality</option><option value="Cultural or institutional" data-i18n="setting4">Cultural or institutional</option><option value="Other" data-i18n="setting5">Other</option></select>
-              </label>
-              <label class="field field-wide">
-                <span data-i18n="labelLocation">City or neighborhood *</span>
-                <input type="text" name="location" autocomplete="address-level2" required data-i18n-placeholder="placeholderLocation" placeholder="Portland, Oregon">
-                <small class="field-error"></small>
-              </label>
-              <label class="field field-wide">
-                <span data-i18n="labelBudget">Budget</span>
-                <input name="budget" type="text" data-i18n-placeholder="budgetPrompt" placeholder="Discuss during consultation">
-              </label>
-              <label class="field field-wide">
-                <span data-i18n="labelDetails">Tell us about your garden *</span>
-                <textarea name="details" rows="4" required minlength="20" data-i18n-placeholder="placeholderDetails" placeholder="Describe the space, your vision, and what you hope to experience in the garden…"></textarea>
-                <small class="field-error"></small>
-              </label>
-            </div>
-          </div>
-
-          <div class="form-step" data-step="3">
-            <div class="step-heading">
-              <span data-i18n="step3Label">Step 3 of 3</span>
-              <h3 data-i18n="step3Title">Review your project brief</h3>
-              <p data-i18n="step3Text">Check the details before preparing your summary.</p>
-            </div>
-            <div class="review-card" id="review-card"></div>
-            <label class="consent-row">
-              <input type="checkbox" name="consent" required>
-              <span data-i18n="consent">I confirm these details and understand this form prepares a draft without sending it.</span>
-            </label>
-            <p class="field-error" id="consent-error" role="alert"></p>
-          </div>
-
-          <div class="form-actions">
-            <button class="button button-ghost hidden" type="button" id="back-button" data-i18n="back">Back</button>
-            <button class="button button-primary" type="button" id="next-button" data-i18n="next">Continue</button>
-            <button class="button button-primary hidden" type="submit" id="submit-button" data-i18n="prepare">Prepare project brief</button>
-          </div>
+          <p id="form-status" role="status" aria-live="polite"></p>
+          <div class="form-actions"><button class="button button-primary" type="submit" id="submit-button" data-i18n="prepare">Send inquiry</button></div>
         </form>
-
-        <div class="booking-success hidden" id="booking-success" aria-live="polite">
-          <div class="success-icon" aria-hidden="true">✓</div>
-          <p class="eyebrow" data-i18n="successEyebrow">Project brief prepared</p>
-          <h3 data-i18n="successTitle">Your garden brief is ready.</h3>
-          <p data-i18n="successText">Copy or download your brief to keep for a conversation with Immaculate Gardens. Your inquiry has not been sent.</p>
-          <div class="success-actions">
-            <button class="button button-primary" type="button" id="copy-request" data-i18n="copy">Copy summary</button>
-            <button class="button button-ghost" type="button" id="download-request" data-i18n="download">Download brief</button>
-            <button class="button button-ghost" type="button" id="new-request" data-i18n="newRequest">New inquiry</button>
-          </div>
-          <p class="copy-status" id="copy-status" role="status"></p><pre id="prepared-summary" class="prepared-summary"></pre>
+        <div class="booking-success hidden" id="booking-success" role="status" tabindex="-1">
+          <div class="success-icon" aria-hidden="true">✓</div><p class="eyebrow" data-i18n="successEyebrow">Thank you</p><h3 data-i18n="successTitle">Your inquiry has been submitted.</h3><p data-i18n="successText">Immaculate Gardens will follow up using the email address you provided.</p><div class="success-actions"><button class="button button-ghost" type="button" id="new-request" data-i18n="newRequest">Send another inquiry</button></div>
         </div>
       </div>
     </section>

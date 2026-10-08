@@ -31,14 +31,7 @@ const translations = {
     "serviceCta": "Consultar este servicio",
     "bookEyebrow": "Comienza tu jardín",
     "bookTitle": "Cuéntanos sobre tu espacio.",
-    "bookIntro": "Elige un servicio y prepara un resumen de tu proyecto para conversar con Immaculate Gardens.",
-    "path1": "Elige un servicio",
-    "path2": "Describe tu jardín",
-    "path3": "Revisa el resumen",
-    "privateTitle": "Borrador de consulta.",
-    "privateText": "Este formulario prepara un resumen que puedes guardar o copiar. No envía una consulta.",
-    "stepLabel": "Paso 1 de 3",
-    "step1Title": "¿Por dónde quieres comenzar?",
+    "bookIntro": "Comparte algunos detalles y envía tu consulta a Immaculate Gardens.",
     "optionPerformance": "Consulta de jardín",
     "optionPerformanceNote": "Conversar sobre tu espacio e intenciones",
     "optionWorkshop": "Diseño de jardín",
@@ -47,46 +40,34 @@ const translations = {
     "optionCulturalNote": "Crear un jardín como obra de arte",
     "optionOther": "Cuidado artístico del jardín",
     "optionOtherNote": "Cuidar un jardín en evolución",
-    "step2Label": "Paso 2 de 3",
-    "step2Title": "Tu proyecto de jardín",
     "labelName": "Tu nombre *",
     "labelOrganization": "Organización o estudio",
     "labelEmail": "Correo electrónico *",
     "labelDate": "Fecha de inicio deseada",
     "labelAudience": "Tipo de propiedad",
     "selectPrompt": "Seleccionar",
-    "labelLocation": "Ciudad o barrio *",
+    "labelLocation": "Ciudad o barrio (opcional)",
     "labelBudget": "Presupuesto",
     "budgetPrompt": "Conversarlo durante la consulta",
     "budget1": "Menos de USD 1.000",
     "budget4": "Más de USD 6.000",
-    "labelDetails": "Cuéntanos sobre tu jardín *",
+    "labelDetails": "Tu mensaje *",
     "placeholderName": "Nombre y apellido",
     "placeholderOrganization": "Opcional: estudio, institución u organización",
     "placeholderEmail": "tu@correo.com",
     "placeholderLocation": "Portland, Oregón",
-    "placeholderDetails": "Describe el espacio, tu visión, los elementos existentes y lo que deseas experimentar en el jardín…",
-    "step3Label": "Paso 3 de 3",
-    "step3Title": "Revisa el resumen del proyecto",
-    "step3Text": "Revisa los detalles antes de preparar el resumen.",
-    "consent": "Confirmo estos datos y entiendo que este formulario prepara un borrador sin enviarlo.",
-    "back": "Atrás",
-    "next": "Continuar",
-    "prepare": "Preparar resumen del proyecto",
-    "successEyebrow": "Resumen del proyecto preparado",
-    "successTitle": "El resumen de tu jardín está listo.",
-    "successText": "Copia o descarga el resumen para conservarlo y conversar con Immaculate Gardens. Tu consulta no se ha enviado.",
-    "copy": "Copiar resumen",
-    "newRequest": "Nueva solicitud",
+    "placeholderDetails": "¿Qué te gustaría crear o mejorar en tu jardín?",
+    "prepare": "Enviar consulta",
+    "successEyebrow": "Gracias",
+    "successTitle": "Tu consulta se ha enviado.",
+    "successText": "Immaculate Gardens se pondrá en contacto contigo mediante el correo que proporcionaste.",
+    "newRequest": "Enviar otra consulta",
     "footerLine": "Arte de jardines japoneses · Diseño · Encargos · Cuidado artístico",
     "footerPrivate": "Área metropolitana de Portland, Oregón",
     "required": "Completa este campo.",
     "invalidEmail": "Ingresa un correo válido.",
     "detailsShort": "Incluye al menos 20 caracteres.",
     "chooseService": "Selecciona un servicio de jardín para continuar.",
-    "acceptConsent": "Confirma la información para continuar.",
-    "copied": "Resumen copiado.",
-    "copyFailed": "No fue posible copiar. Selecciona y copia el texto manualmente.",
     "reviewService": "Servicio de jardín",
     "reviewContact": "Contacto",
     "reviewOrganization": "Organización",
@@ -96,10 +77,8 @@ const translations = {
     "reviewBudget": "Presupuesto",
     "reviewDetails": "Detalles",
     "notProvided": "No especificado",
-    "summaryTitle": "RESUMEN DEL PROYECTO DE JARDÍN — IMMACULATE GARDENS",
     "service4Title": "Cuidado Artístico del Jardín",
     "service4Text": "Preserva la intención del jardín mediante poda artística, refinamiento estacional, formación a largo plazo y dirección artística continua.",
-    "download": "Descargar resumen",
     "artistEyebrow": "El artista",
     "artistTitle": "Saul Emanuel Urias Rodriguez",
     "artistText": "Artista paisajista establecido en el área metropolitana de Portland, Oregón, Saul está construyendo Immaculate Gardens alrededor del arte del jardín japonés: entornos contemplativos, trabajo artesanal cuidado y una relación duradera con el paisaje.",
@@ -115,7 +94,16 @@ const translations = {
     "setting2": "Finca",
     "setting3": "Bienestar u hospitalidad",
     "setting4": "Cultural o institucional",
-    "setting5": "Otro"
+    "setting5": "Otro",
+    "formTitle": "Conversemos sobre tu jardín.",
+    "labelService": "¿Qué te interesa?",
+    "serviceGeneral": "Aún no estoy seguro",
+    "sending": "Enviando…",
+    "emailAlternative": "¿Prefieres escribir por correo?",
+    "sendError": "No pudimos enviar tu consulta. Tus datos siguen aquí: vuelve a intentarlo o escríbenos directamente.",
+    "setupError": "El envío de correo está en proceso de configuración. Contacta directamente a Immaculate Gardens con el enlace de correo que aparece abajo.",
+    "requiredNote": "Solo necesitamos tu nombre, correo y un breve mensaje para comenzar.",
+    "contactTitle": "Contactar a Immaculate Gardens"
   },
   "en": {
     "skip": "Skip to content",
@@ -149,14 +137,7 @@ const translations = {
     "serviceCta": "Discuss this service",
     "bookEyebrow": "Begin your garden",
     "bookTitle": "Tell us about your space.",
-    "bookIntro": "Choose a service and prepare a project brief for your conversation with Immaculate Gardens.",
-    "path1": "Choose a service",
-    "path2": "Describe your garden",
-    "path3": "Review your brief",
-    "privateTitle": "Inquiry draft.",
-    "privateText": "This form prepares a summary you can save or copy. It does not send an inquiry.",
-    "stepLabel": "Step 1 of 3",
-    "step1Title": "Where would you like to begin?",
+    "bookIntro": "Share a few details and send your inquiry to Immaculate Gardens.",
     "optionPerformance": "Garden consultation",
     "optionPerformanceNote": "Discuss your site and intentions",
     "optionWorkshop": "Garden design",
@@ -165,46 +146,34 @@ const translations = {
     "optionCulturalNote": "Create a garden as a work of art",
     "optionOther": "Garden stewardship",
     "optionOtherNote": "Care for an evolving garden",
-    "step2Label": "Step 2 of 3",
-    "step2Title": "Your garden project",
     "labelName": "Your name *",
     "labelOrganization": "Organization or practice",
     "labelEmail": "Email address *",
     "labelDate": "Preferred start date",
     "labelAudience": "Property setting",
     "selectPrompt": "Select",
-    "labelLocation": "City or neighborhood *",
+    "labelLocation": "City or neighborhood (optional)",
     "labelBudget": "Budget",
     "budgetPrompt": "Discuss during consultation",
     "budget1": "Under USD 1,000",
     "budget4": "Over USD 6,000",
-    "labelDetails": "Tell us about your garden *",
+    "labelDetails": "Your message *",
     "placeholderName": "First and last name",
     "placeholderOrganization": "Optional: firm, institution, or organization",
     "placeholderEmail": "you@email.com",
     "placeholderLocation": "Portland, Oregon",
-    "placeholderDetails": "Describe the space, your vision, existing features, and what you hope to experience in the garden…",
-    "step3Label": "Step 3 of 3",
-    "step3Title": "Review your project brief",
-    "step3Text": "Check the details before preparing your summary.",
-    "consent": "I confirm these details and understand this form prepares a draft without sending it.",
-    "back": "Back",
-    "next": "Continue",
-    "prepare": "Prepare project brief",
-    "successEyebrow": "Project brief prepared",
-    "successTitle": "Your garden brief is ready.",
-    "successText": "Copy or download your brief to keep for a conversation with Immaculate Gardens. Your inquiry has not been sent.",
-    "copy": "Copy summary",
-    "newRequest": "New inquiry",
+    "placeholderDetails": "What would you like to create or improve in your garden?",
+    "prepare": "Send inquiry",
+    "successEyebrow": "Thank you",
+    "successTitle": "Your inquiry has been submitted.",
+    "successText": "Immaculate Gardens will follow up using the email address you provided.",
+    "newRequest": "Send another inquiry",
     "footerLine": "Japanese garden artistry · Design · Commissions · Stewardship",
     "footerPrivate": "Portland, Oregon metro area",
-    "required": "Complete this field.",
-    "invalidEmail": "Enter a valid email address.",
+    "required": "Please complete this field.",
+    "invalidEmail": "Please enter a valid email address.",
     "detailsShort": "Include at least 20 characters.",
     "chooseService": "Choose a garden service to continue.",
-    "acceptConsent": "Confirm the information to continue.",
-    "copied": "Summary copied.",
-    "copyFailed": "Could not copy. Please select and copy the text manually.",
     "reviewService": "Garden service",
     "reviewContact": "Contact",
     "reviewOrganization": "Organization",
@@ -214,10 +183,8 @@ const translations = {
     "reviewBudget": "Budget",
     "reviewDetails": "Details",
     "notProvided": "Not provided",
-    "summaryTitle": "GARDEN PROJECT BRIEF — IMMACULATE GARDENS",
     "service4Title": "Garden Stewardship",
     "service4Text": "Preserve the garden’s intention through artistic pruning, seasonal refinement, long-term shaping, and ongoing artistic direction.",
-    "download": "Download brief",
     "artistEyebrow": "The artist",
     "artistTitle": "Saul Emanuel Urias Rodriguez",
     "artistText": "An established landscape artist serving the Portland, Oregon metro area, Saul is building Immaculate Gardens around the art of the Japanese garden: contemplative environments, considered craftsmanship, and a lasting relationship with the landscape.",
@@ -233,196 +200,76 @@ const translations = {
     "setting2": "Estate",
     "setting3": "Wellness or hospitality",
     "setting4": "Cultural or institutional",
-    "setting5": "Other"
+    "setting5": "Other",
+    "formTitle": "Let’s talk about your garden.",
+    "labelService": "What are you interested in?",
+    "serviceGeneral": "I’m not sure yet",
+    "sending": "Sending…",
+    "emailAlternative": "Prefer email?",
+    "sendError": "We couldn’t submit your inquiry. Your details are still here—please try again or email us directly.",
+    "setupError": "Email delivery is being set up. Please contact Immaculate Gardens directly using the email link below.",
+    "requiredNote": "Name, email, and a short message are all we need to start.",
+    "contactTitle": "Contact Immaculate Gardens"
   }
 };
-const serviceNames = {"en": {"performance": "Japanese Garden Consultation", "workshop": "Garden Design", "cultural": "Signature Garden Commission", "other": "Garden Stewardship"}, "es": {"performance": "Consulta de Jardín Japonés", "workshop": "Diseño de Jardines", "cultural": "Jardín de Autor por Encargo", "other": "Cuidado Artístico del Jardín"}};
-let language = "en";
-let currentStep = 1;
-let preparedSummary = "";
-const form = document.querySelector("#booking-form");
-const steps = [...document.querySelectorAll(".form-step")];
-const pathItems = [...document.querySelectorAll(".booking-path li")];
-const nextButton = document.querySelector("#next-button");
-const backButton = document.querySelector("#back-button");
-const submitButton = document.querySelector("#submit-button");
 
-function t(key) { return translations[language][key] || key; }
-
-function setLanguage(lang) {
-  language = lang;
-  document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
-    if (translations[lang][key]) element.textContent = translations[lang][key];
-  });
-  document.querySelectorAll("[data-i18n-placeholder]").forEach((element) => {
-    element.placeholder = translations[lang][element.dataset.i18nPlaceholder];
-  });
-  document.querySelectorAll(".lang-button").forEach((button) => {
-    const active = button.dataset.lang === lang;
-    button.classList.toggle("active", active);
-    button.setAttribute("aria-pressed", String(active));
-  });
-  document.title = lang === "es" ? "Immaculate Gardens — Arte de Jardines Japoneses" : "Immaculate Gardens — Japanese Garden Artistry";
-  if (currentStep === 3) renderReview();
-  document.querySelector("#prepared-summary").textContent = preparedSummary;
-  document.querySelector(".garden-image").alt = lang === "en" ? "Illustrative Japanese garden study with stone, moss, and a quiet pathway" : "Estudio ilustrativo de jardín japonés con piedras, musgo y un sendero tranquilo";
+let language = 'en';
+let submitting = false;
+let statusKey = '';
+const form = document.querySelector('#booking-form');
+const submitButton = document.querySelector('#submit-button');
+const status = document.querySelector('#form-status');
+const success = document.querySelector('#booking-success');
+const serviceNames = {performance:'Japanese Garden Consultation',workshop:'Garden Design',cultural:'Signature Garden Commission',other:'Garden Stewardship',general:'Not sure yet'};
+function t(key){return translations[language][key] || key;}
+function setLanguage(lang){
+ if(!['en','es'].includes(lang))return;
+ language=lang;document.documentElement.lang=lang;
+ document.querySelectorAll('[data-i18n]').forEach(el=>{if(translations[lang][el.dataset.i18n])el.textContent=t(el.dataset.i18n);});
+ document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>el.placeholder=t(el.dataset.i18nPlaceholder));
+ document.querySelectorAll('.lang-button').forEach(button=>{const active=button.dataset.lang===lang;button.classList.toggle('active',active);button.setAttribute('aria-pressed',String(active));});
+ document.querySelectorAll('[data-error-key]').forEach(el=>el.textContent=t(el.dataset.errorKey));
+ submitButton.textContent=t(submitting?'sending':'prepare');
+ status.textContent=statusKey?t(statusKey):'';
+ document.title=lang==='es'?'Immaculate Gardens — Arte de Jardines Japoneses':'Immaculate Gardens — Japanese Garden Artistry';
+ document.querySelector('.garden-image').alt=lang==='en'?'Illustrative Japanese garden study with stone, moss, and a quiet pathway':'Estudio ilustrativo de jardín japonés con piedras, musgo y un sendero tranquilo';
 }
-
-document.querySelectorAll(".lang-button").forEach((button) => button.addEventListener("click", () => setLanguage(button.dataset.lang)));
-
-const dateInput = document.querySelector("input[name='date']");
-dateInput.min = new Date().toISOString().slice(0, 10);
-
-const menuToggle = document.querySelector(".menu-toggle");
-const siteNav = document.querySelector(".site-nav");
-menuToggle.addEventListener("click", () => {
-  const open = siteNav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
-});
-document.querySelectorAll(".site-nav a").forEach((link) => link.addEventListener("click", () => {
-  siteNav.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded", "false");
+document.querySelectorAll('.lang-button').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+const menuToggle=document.querySelector('.menu-toggle'),siteNav=document.querySelector('.site-nav');
+function closeMenu(){siteNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}
+menuToggle.addEventListener('click',()=>menuToggle.setAttribute('aria-expanded',String(siteNav.classList.toggle('open'))));
+siteNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+document.addEventListener('keydown',event=>{if(event.key==='Escape'&&siteNav.classList.contains('open')){closeMenu();menuToggle.focus();}});
+const header=document.querySelector('.site-header');const updateHeader=()=>header.classList.toggle('scrolled',window.scrollY>35);
+window.addEventListener('scroll',updateHeader,{passive:true});updateHeader();
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));}
+document.querySelectorAll('.experience-card').forEach(card=>card.querySelector('.card-action').addEventListener('click',()=>{
+ if(submitting)return;
+ success.classList.add('hidden');form.classList.remove('hidden');
+ form.elements.service.value=card.dataset.service;
+ document.querySelector('#contratacion').scrollIntoView({behavior:'smooth'});form.elements.name.focus({preventScroll:true});
 }));
-
-const header = document.querySelector(".site-header");
-const updateHeader = () => header.classList.toggle("scrolled", window.scrollY > 35);
-window.addEventListener("scroll", updateHeader, { passive: true });
-updateHeader();
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: .12 });
-document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
-
-function selectService(value) {
-  const input = form.querySelector(`input[name="service"][value="${value}"]`);
-  if (input) input.checked = true;
-  document.querySelector("#contratacion").scrollIntoView({ behavior: "smooth" });
+function clearError(field){field.classList.remove('invalid');field.removeAttribute('aria-invalid');const error=field.parentElement.querySelector('.field-error');if(error){error.textContent='';delete error.dataset.errorKey;}}
+form.querySelectorAll('[required]').forEach(field=>field.addEventListener('input',()=>clearError(field)));
+function validate(){let first;
+ form.querySelectorAll('[required]').forEach(field=>{clearError(field);const key=!field.value.trim()?'required':field.type==='email'&&!field.validity.valid?'invalidEmail':!field.validity.valid?'required':'';
+ if(key){field.classList.add('invalid');field.setAttribute('aria-invalid','true');const error=field.parentElement.querySelector('.field-error');error.dataset.errorKey=key;error.textContent=t(key);first=first||field;}});
+ if(first)first.focus();return !first;
 }
-document.querySelectorAll(".experience-card").forEach((card) => {
-  card.querySelector(".card-action").addEventListener("click", () => selectService(card.dataset.service));
+form.addEventListener('submit',async event=>{
+ event.preventDefault();if(submitting||!validate())return;
+ if(form.elements._honey.value)return;
+ submitting=true;statusKey='';status.textContent='';submitButton.disabled=true;submitButton.textContent=t('sending');form.setAttribute('aria-busy','true');
+ const payload={name:form.elements.name.value.trim(),email:form.elements.email.value.trim(),service:serviceNames[form.elements.service.value],location:form.elements.location.value.trim(),message:form.elements.details.value.trim(),_replyto:form.elements.email.value.trim(),_subject:'New garden inquiry — Immaculate Gardens',_captcha:'false',_template:'table',_honey:''};
+ const controller=new AbortController();const timeout=setTimeout(()=>controller.abort(),25000);
+ try{
+  const response=await fetch('https://formsubmit.co/ajax/immaculategardensllc@gmail.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
+  const result=await response.json();
+  if(/activat|confirm.*email/i.test(result.message||'')){statusKey='setupError';throw new Error('Activation required');}
+  if(!response.ok||!(result.success===true||result.success==='true'))throw new Error('Submission rejected');
+  form.classList.add('hidden');success.classList.remove('hidden');success.focus();form.reset();
+ }catch(error){statusKey=statusKey||'sendError';status.textContent=t(statusKey);}
+ finally{clearTimeout(timeout);submitting=false;submitButton.disabled=false;submitButton.textContent=t('prepare');form.removeAttribute('aria-busy');}
 });
-
-function showStep(step) {
-  currentStep = step;
-  steps.forEach((item) => item.classList.toggle("active", Number(item.dataset.step) === step));
-  pathItems.forEach((item, index) => item.classList.toggle("active", index <= step - 1));
-  backButton.classList.toggle("hidden", step === 1);
-  nextButton.classList.toggle("hidden", step === 3);
-  submitButton.classList.toggle("hidden", step !== 3);
-  if (step === 3) renderReview();
-  document.querySelector(".booking-panel").scrollIntoView({ behavior: "smooth", block: "center" });
-}
-
-function validateStep(step) {
-  if (step === 1) {
-    const selected = form.querySelector("input[name='service']:checked");
-    document.querySelector("#service-error").textContent = selected ? "" : t("chooseService");
-    return Boolean(selected);
-  }
-  if (step === 2) {
-    const fields = [...form.querySelectorAll("[data-step='2'] [required]")];
-    let valid = true;
-    fields.forEach((field) => {
-      const error = field.parentElement.querySelector(".field-error");
-      field.classList.remove("invalid");
-      error.textContent = "";
-      if (!field.value.trim()) {
-        valid = false;
-        field.classList.add("invalid");
-        error.textContent = t("required");
-      } else if (field.type === "email" && !field.validity.valid) {
-        valid = false;
-        field.classList.add("invalid");
-        error.textContent = t("invalidEmail");
-      } else if (field.name === "details" && field.value.trim().length < 20) {
-        valid = false;
-        field.classList.add("invalid");
-        error.textContent = t("detailsShort");
-      }
-    });
-    return valid;
-  }
-  return true;
-}
-
-nextButton.addEventListener("click", () => {
-  if (validateStep(currentStep)) showStep(currentStep + 1);
-});
-backButton.addEventListener("click", () => showStep(currentStep - 1));
-
-function formValues() { return Object.fromEntries(new FormData(form).entries()); }
-
-function budgetLabel(value) { return value || t("budgetPrompt"); }
-
-function renderReview() {
-  const data = formValues();
-  const rows = [
-    [t("reviewService"), serviceNames[language][data.service]],
-    [t("reviewContact"), `${data.name}\n${data.email}`],
-    [t("reviewOrganization"), data.organization || t("notProvided")],
-    [t("reviewDate"), data.date || t("notProvided")],
-    [t("reviewLocation"), data.location],
-    [t("reviewAudience"), data.audience ? form.querySelector("select[name=audience] option:checked").textContent : t("notProvided")],
-    [t("reviewBudget"), budgetLabel(data.budget)],
-    [t("reviewDetails"), data.details]
-  ];
-  const review = document.querySelector("#review-card");
-  review.innerHTML = "";
-  rows.forEach(([label, value]) => {
-    const row = document.createElement("div");
-    row.className = "review-row";
-    const labelElement = document.createElement("span");
-    const valueElement = document.createElement("strong");
-    labelElement.textContent = label;
-    valueElement.textContent = value;
-    row.append(labelElement, valueElement);
-    review.append(row);
-  });
-  preparedSummary = `${t("summaryTitle")}\n\n${rows.map(([label, value]) => `${label}: ${value}`).join("\n\n")}`;
-}
-
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const consent = form.querySelector("input[name='consent']");
-  if (!consent.checked) {
-    document.querySelector("#consent-error").textContent = t("acceptConsent");
-    return;
-  }
-  document.querySelector("#consent-error").textContent = "";
-  renderReview();
-  form.classList.add("hidden");
-  document.querySelector("#booking-success").classList.remove("hidden");
-  document.querySelector("#prepared-summary").textContent = preparedSummary;
-});
-
-document.querySelector("#copy-request").addEventListener("click", async () => {
-  const status = document.querySelector("#copy-status");
-  try {
-    await navigator.clipboard.writeText(preparedSummary);
-    status.textContent = t("copied");
-  } catch {
-    status.textContent = t("copyFailed");
-  }
-});
-
-document.querySelector("#new-request").addEventListener("click", () => {
-  form.reset();
-  form.classList.remove("hidden");
-  document.querySelector("#booking-success").classList.add("hidden");
-  document.querySelector("#copy-status").textContent = "";
-  showStep(1);
-});
-
-document.querySelector("#year").textContent = new Date().getFullYear();
-
-document.querySelector('#download-request').addEventListener('click',()=>{const blob=new Blob([preparedSummary],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='immaculate-gardens-project-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);});
-document.addEventListener('keydown',event=>{if(event.key==='Escape'&&siteNav.classList.contains('open')){siteNav.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.focus();}});
-setLanguage('en');
+document.querySelector('#new-request').addEventListener('click',()=>{success.classList.add('hidden');form.classList.remove('hidden');statusKey='';status.textContent='';form.elements.name.focus();});
+document.querySelector('#year').textContent=new Date().getFullYear();setLanguage('en');
